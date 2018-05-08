@@ -1,0 +1,242 @@
+/*   ---------
+   GENERICS
+---------   */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background: #efefef;
+    color: #444;
+}
+
+/*   ---------------------
+   LAYOUT & BASE STYLES
+---------------------   */
+
+.bg-primary {
+    background-color: #35B66B !important;
+    color: #fff;
+}
+
+#top {
+    display: flex;
+}
+
+#top > div {
+    flex: 1;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*   ------------
+   LIST GROUPS
+------------   */
+
+.list-group {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.list-group-item {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 0;
+    background: #333;
+    color: #fff;
+    border-right: 1px solid rgba(160, 160, 160, 0.125);
+    border-left: none;
+    border-radius: 0;
+}
+
+.list-group-item-primary {
+    background: #444 !important;
+    color: #fff;
+    transition: all 100ms ease;
+}
+
+.list-group .list-group-item-primary .player-name {
+    color: #fff;
+    transition: all 100ms ease;
+}
+
+.list-group.active .list-group-item-primary .player-name {
+    font-weight: bold;
+    color: #35B66B !important;
+}
+
+.list-group-item-primary.winner {
+    background-color: #298550 !important;
+}
+
+.list-group-item-primary.looser {
+    background-color: #a82525 !important;
+}
+
+.list-group-item .fa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40px;
+}
+
+.list-group-item.weapon::before {
+    display: block;
+    content: "";
+    height: 40px;
+    width: 40px;
+    background-image: url("../images/weaponDefault.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+}
+
+.list-group-item.weapon.weapon1::before {
+    background-image: url("../images/weapon1.png");
+}
+
+.list-group-item.weapon.weapon2::before {
+    background-image: url("../images/weapon2.png");
+}
+
+.list-group-item.weapon.weapon3::before {
+    background-image: url("../images/weapon3.png");
+}
+
+.list-group-item.weapon.weapon4::before {
+    background-image: url("../images/weapon4.png");
+}
+
+.list-group.active.in-battle .weapon::before {
+    background-color: #a82525;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+
+.list-group.active.in-battle .weapon:hover::before {
+    background-color: #932020;
+}
+
+.list-group.active.in-battle .shield .fa {
+    background-color: #298550;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+
+.list-group.active.in-battle .shield .fa:hover {
+    background-color: #247446;
+}
+
+.list-group.in-battle.defending:not(.active) .shield .fa {
+    color: #298550;
+}
+
+.list-group-item.health .level,
+.list-group-item.shield .level {
+    transition: all 50ms ease;
+}
+
+.list-group-item.health.hit .level,
+.list-group-item.shield.hit .level {
+    color: #a82525;
+}
+
+
+.list-group-header {
+    justify-content: center;
+    border: none;
+    position: relative;
+    flex: 2;
+}
+
+.list-group-header .fa {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.list-group-item:first-child,
+.list-group-item:last-child {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+#gameCanvas {
+    vertical-align: top;
+}
+
+/*   -------
+   FOOTER
+---------- */
+#appreciationText {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 1.2rem;
+}
+
+/*   --------------------
+   BOOTSTRAP OVERRIDES
+--------------------   */
+.btn {
+    font-size: 1.6rem;
+}
+
+.btn-outline-primary {
+    color: #35B66B;
+    background-color: transparent;
+    background-image: none;
+    border-color: #35B66B;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #34a764;
+    background-image: none;
+    border-color: #34a764;
+}
+
+.btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:not([disabled]):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #34a764;
+    border-color: #34a764;
+    box-shadow: 0 0 0 0.1rem rgba(0, 125, 0, 0.4);
+}
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+    box-shadow: 0 0 0 0.1rem rgba(0, 125, 0, 0.4);
+}
+
+.navbar {
+    color: #333;    
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal label {
+    margin-right: 10px;
+}
